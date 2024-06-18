@@ -2,7 +2,7 @@ import { conexionAPI } from "./conexionAPI.js";
 
 const lista = document.querySelector('[data-lista]');
 
-function CrearCard(titulo,descripcion,url,imagen){
+export default function CrearCard(titulo,descripcion,url,imagen){
     const video = document.createElement('li');
     video.className = 'videos__item';
     video.innerHTML = `
@@ -21,8 +21,11 @@ function CrearCard(titulo,descripcion,url,imagen){
 }
 
 async function ListarVideos(){
-    const listaAPI = await conexionAPI.ListarVideos();
-    
-    listaAPI.forEach(video => lista.appendChild(CrearCard(video.titulo, video.descripcion, video.url, video.imagem)));
+    try{
+        const listaAPI = await conexionAPI.ListarVideos();
+        listaAPI.forEach(video => lista.appendChild(CrearCard(video.titulo, video.descripcion, video.url, video.imagem)));
+    }catch{
+        lista.innerHTML = '<h2 class="mensaje__titulo">Ha ocurrido un problema con la conexion</h2>';
+    }
 }
 ListarVideos();
