@@ -69,46 +69,31 @@
         <li class="breadcrumb__pagina">Abrir cuenta</li>
       </ul>
 
+      <!-- Formulario -->
       <section class="formulario">
         <div class="formulario__container">
-          <img
-            src="../img/status-2.png"
-            alt="Etapa dos de tres"
-            class="formulario__etapas"
-          />
+          
+          <img src="../img/status-2.png" alt="Etapa dos de tres" class="formulario__etapas"/>
           <h2 class="formulario__titulo-texto">Reconocimento facial</h2>
           <p class="formulario__texto">
             ¡Haga clic en la imagen de abajo para realizar la captura de su
             imagen!
           </p>
 
-          <img
-            src="../img/reconocimento.png"
-            alt="Cara con ojos y una sonrisa dentro de un marco."
-            data-video-boton
-            class="formulario__imagen"
-          />
-
+          <!-- Tomar foto -->
+          <img src="../img/reconocimento.png" alt="Cara con ojos y una sonrisa dentro de un marco." data-video-boton class="formulario__imagen"/>
           <div class="formulario__camera" data-camera>
             <video width="320" height="240" autoplay data-video></video>
             <button class="camera__boton" data-tomar-foto>Tomar foto</button>
           </div>
 
+          <!-- Mensaje -->
           <div class="formulario__mensaje" data-mensaje>
             <canvas width="320" height="240" data-video-canvas></canvas>
-            <img
-              src="../img/icon_check.png"
-              alt="Ícono de validación"
-              class="formulario__imagen"
-            />
+            <img src="../img/icon_check.png" alt="Ícono de validación" class="formulario__imagen"/>
             <p>¡Eso es, imagen capturada!</p>
 
-            <a
-              href="#"
-              class="formulario__boton formulario__boton--enlace"
-              data-enviar
-              >¡Quiero abrir mi cuenta!</a
-            >
+            <a href="#" class="formulario__boton formulario__boton--enlace" data-enviar>¡Quiero abrir mi cuenta!</a>
           </div>
         </div>
       </section>
@@ -170,5 +155,7 @@
         </h2>
       </section>
     </footer>
+
+    <script src="../js/camara.js" type="module"></script>
   </body>
 </html>
